@@ -1,0 +1,138 @@
+### Why This Matters for Jobs
+
+JavaScript (JS) is a dynamically typed language---meaning you don't declare variable types upfront, which makes it flexible but requires careful handling to avoid bugs. Mastering variables and data types is your entry ticket: every JS program starts here. In interviews, expect questions like "What's the difference between let and var?" or "How do you log data to debug?" This class sets you up for clean, maintainable code that scales to team projects.
+
+### Key Concepts Explained
+
+1.  **Running JavaScript**
+
+    -   JS runs in browsers (client-side) or servers (Node.js). For now, we'll use the browser console for instant feedback---no setup needed.
+    -   Open any webpage, hit F12 (or Cmd+Option+I on Mac), go to the "Console" tab, and type code directly. Hit Enter to run.
+2.  **Variables: Storing Data**
+
+    -   Variables are like labeled boxes for data. Use them to reuse values without hardcoding.
+    -   Three ways to declare:
+        -   **var**: Old-school (pre-2015). Function-scoped (visible inside functions), hoists (moves to top, can cause bugs). Avoid in modern code.
+        -   **let**: Block-scoped (only visible in {} blocks like if-statements). No hoisting issues. Preferred for most variables.
+        -   **const**: Like let, but *immutable* (can't reassign the variable). Great for constants like PI or API keys. Use by default unless you need to change it.
+    -   Syntax: let name = 'value'; (semicolon optional but good habit for multi-line code).
+3.  **Data Types: What's Inside the Box?** JS has primitive (basic) and reference (complex) types. Primitives are copied by value; references by pointer (we'll dive deeper later).
+
+    | Type | Description | Example | Use Case |
+    | --- | --- | --- | --- |
+    | **String** | Text. Use single/double quotes. | 'Hello' or "World" | Names, messages, URLs. |
+    | **Number** | Integers or floats. No separate int/float. | 42 or 3.14 | Ages, prices, calculations. Handles NaN (Not a Number) for errors. |
+    | **Boolean** | True/false logic. | true or false | Conditions, flags (e.g., isLoggedIn). |
+    | **Undefined** | Variable declared but no value yet. | let x; (x is undefined) | Default state before assignment. |
+    | **Null** | Intentionally empty. | let y = null; | Resetting values, API responses. |
+    | **Symbol** (advanced, skim for now) | Unique IDs. | Symbol('unique') | Private object keys (rare in basics). |
+    | **Object** (reference type) | Key-value pairs (we'll cover in Class 5). | {name: 'Grok'} | Complex data like users or configs. |
+    | **Array** (reference) | Ordered lists (Class 5). | [1, 2, 3] | Lists of items. |
+
+    -   Check types with typeof variable (returns a string like 'string').
+    -   JS is loosely typed: 1 + '1' = '11' (coerces number to string). Watch for this in interviews!
+4.  **Console Logging: Your Debug Best Friend**
+
+    -   console.log(value): Prints to console. Use for testing.
+    -   console.error('Oops!'): For errors.
+    -   Pro tip: console.table([obj1, obj2]) for pretty data display---impresses in code reviews.
+
+### Examples in Action
+
+Open your console and try these one by one:
+
+javascript
+
+```
+// Declare variables
+let name = 'Alex';  // String
+const age = 25;     // Number (can't change)
+let isStudent = true;  // Boolean
+
+// Log them
+console.log('Name:', name);
+console.log('Age:', age);
+console.log('Student?', isStudent);
+console.log(typeof age);  // 'number'
+
+// Reassign (only let works)
+name = 'Jordan';  // OK
+// age = 30;      // Error! const can't change
+
+// Basic ops (we'll expand next class)
+let score = 95;
+console.log('Passed:', score > 80);  // true (boolean from comparison)
+```
+
+Output:
+
+text
+
+```
+Name: Alex
+Age: 25
+Student? true
+number
+Passed: true
+```
+
+Common Pitfalls:
+
+-   Forgetting semicolons? JS forgives, but use them.
+-   var hoisting: console.log(x); var x = 5; logs undefined, not error. Use let to avoid.
+-   null vs undefined: null is "I set it to nothing"; undefined is "it doesn't exist yet."
+
+### Job-Ready Tip
+
+In resumes/projects, mention "Wrote modular JS with ES6+ (let/const) for a responsive e-commerce site." Start a GitHub repo now---commit after each class!
+
+* * * * *
+
+### Exercise 1: Build a Simple User Profile Logger
+
+**Goal:** Practice declaring variables, types, logging, and basic checks. This mimics logging user data in a web app.
+
+**Task:**
+
+1.  Declare these variables:
+    -   userName (string: your name)
+    -   userAge (number: your age)
+    -   isEmployed (boolean: true if you have a job, false otherwise)
+    -   birthYear (const number: current year minus age; hint: use 2025)
+2.  Log a welcome message: "Welcome, [userName]! You are [userAge] years old."
+3.  Log if they're an adult: "Adult status: [true/false]" (use userAge >= 18)
+4.  Check types: Log typeof for each variable.
+5.  Bonus (optional for now): If isEmployed is true, log "Ready for JS job hunt!"; else "Keep learning!"
+
+**Run it in console, paste your full code here, and share the output.** Explain one thing you learned or a "gotcha" you hit.
+
+Reply with your solution---I'll review and confirm before Class 2: Operators & Conditionals! Let's code! 🚀
+
+let userName = 'solorichmon';
+
+let userAge = 103;
+
+let isEmployed = true;
+
+const birthYear = 2025 - 103;
+
+console.log('Welcome,', userName, '! You are', userAge, 'years old');
+
+console.log('Welcome,', userName, '! You are', userAge, 'years old.');
+
+
+console.log('Adult status:', userAge >= userAge)
+
+console.log(typeof userName)
+
+console.log(typeof userAge)
+
+console.log(typeof isEmployed);
+
+console.log(typeof birthYear);
+
+if (isEmployed) {
+    console.log('Ready for Job hunt!');
+} else {
+    console.log('Keep learning!');
+}
